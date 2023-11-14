@@ -9,12 +9,13 @@ function naipes(cuarentaCartas) {
   const cartas = [];
   const figuras = ["sota", "caballo", "rey"];
   const palo = ["oro", "copa", "espada", "basto"];
-  if (cuarentaCartas) {
+  const cartasPorPalo = cuarentaCartas? 10 : 12 ; 
+  
     for (let paloIndex = 0; paloIndex < palo.length; paloIndex++) {
         let i = 0;
-      for (let index = 0; index < 10; index++) {
+      for (let index = 0; index < cartasPorPalo; index++) {
         
-        if (index < 7) {
+        if (index < cartasPorPalo-3) {
           cartas.push(index + 1 + " " + palo[paloIndex]);
         } else {
           cartas.push(palo[paloIndex] + " " + figuras[i]);
@@ -23,10 +24,10 @@ function naipes(cuarentaCartas) {
         
       }
     }
-  }
+  
   return cartas;
 }
 
 
 alert("Vamos a ver las cartas...")
-document.write(naipes(true));
+document.write(naipes(false));
