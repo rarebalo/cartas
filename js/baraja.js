@@ -28,6 +28,28 @@ function naipes(cuarentaCartas) {
   return cartas;
 }
 
+function numeroAleatorio(min,max){
+    return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+function mesclarCartas(maso){
+    const masoOriginal = maso;
+    const masoMesclado = maso;
+    let carta = null;
+
+    for (let index = 0; index < masoOriginal.length; index++) {
+           carta = masoMesclado.splice(numeroAleatorio(0,masoOriginal.length),1)[0];  
+           
+           masoMesclado.splice(numeroAleatorio(0,masoMesclado.length),0, carta);   
+    }
+    return masoMesclado;
+}
+
 
 alert("Vamos a ver las cartas...")
-document.write(naipes(false));
+
+const masoUno = naipes(true);
+const masoUnoMesclado = mesclarCartas(masoUno);
+
+
+//Verificar por que cuando mescla las en algunas ocaciones aparecen cartas de la nada...
