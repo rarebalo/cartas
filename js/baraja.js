@@ -5,7 +5,28 @@ de figura: la sota, el caballo y el rey. Algunas variantes de
 esta baraja incluyen dos comodines o cuatro cartas adicionales 
 llamadas 8 y 91*/
 
-const oros =  new Array(10).fill(0);
-const copas =  new Array(10).fill(0);
-const espadas =  new Array(10).fill(0);
-const bastos =  new Array(10).fill(0);
+function naipes(cuarentaCartas) {
+  const cartas = [];
+  const figuras = ["sota", "caballo", "rey"];
+  const palo = ["oro", "copa", "espada", "basto"];
+  if (cuarentaCartas) {
+    for (let paloIndex = 0; paloIndex < palo.length; paloIndex++) {
+        let i = 0;
+      for (let index = 0; index < 10; index++) {
+        
+        if (index < 7) {
+          cartas.push(index + 1 + " " + palo[paloIndex]);
+        } else {
+          cartas.push(palo[paloIndex] + " " + figuras[i]);
+          i++;
+        }
+        
+      }
+    }
+  }
+  return cartas;
+}
+
+
+alert("Vamos a ver las cartas...")
+document.write(naipes(true));
