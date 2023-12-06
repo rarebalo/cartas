@@ -51,3 +51,8 @@ for (let index = 0; index < masoUno.length; index++) {
   document.write(`${index} -> ${masoUno[index]} vs ${masoUnoMesclado[index]}<br>`)
   
 }
+
+alert("vamos a sacar la carta numero 25 del maso mesclado");
+
+alert(`Tu carta es: ${masoUnoMesclado[24]}`)
+
