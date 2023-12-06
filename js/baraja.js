@@ -41,9 +41,9 @@ function mesclarCartas(maso) {
   return masoMesclado;
 }
 
-alert("Vamos a ver las cartas...");
+alert("Vamos a ver las cartas..."); 
 
-const masoUno = naipes(true);
+const masoUno = naipes(false);
 const masoUnoMesclado = mesclarCartas(masoUno);
 
 for (let index = 0; index < masoUno.length; index++) {
